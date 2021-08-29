@@ -1,3 +1,4 @@
+from scan import funtion1
 from flask import Flask, render_template, url_for, request
 app = Flask(__name__,template_folder='template')
 
@@ -13,6 +14,7 @@ def scan_page():
 @app.route('/pricing', methods=['POST'])
 def pricing_page():
     adress = request.form.get("s")
+    adress = funtion1(adress)
     items = [
     {'id': 1, 'name': 'Phone', 'barcode': '893212299897', 'price': 500},
     {'id': 2, 'name': 'Laptop', 'barcode': '123985473165', 'price': 900},
